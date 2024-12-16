@@ -5,8 +5,8 @@ const csvFilePath = 'Favorites table.csv';
 async function loadCSV() {
     const response = await fetch(csvFilePath);
     const csvText = await response.text();
-    const rows = csvText.split('\n').map(row => row.split(','));
-    rows.shift();
+    const rows = csvText.split('\n').map(row => row.split(',')).shift();
+    
     populateTable(rows);
 }
 
@@ -25,7 +25,7 @@ function populateTable(data) {
             td.textContent = cell;
 
             // Apply conditional formatting for columns 3 to 5
-            if (colIndex >= 2 && cell === row[0]) {
+            if (colIndex >= 2 && cell === row[2]) {
                 td.classList.add('highlight1');
             }
 
