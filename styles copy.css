@@ -132,10 +132,6 @@ tr:nth-child(odd) {
 }
 
 
-.highlight1 {
-    background-color: #119822; /* green */
-}
-
-.highlight2 {
-    background-color: #09E85E; /* Light green */
+.highlight {
+    background-color: #4bda53; 
 }
