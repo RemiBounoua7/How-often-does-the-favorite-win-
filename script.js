@@ -16,32 +16,25 @@ function populateTable(data) {
     tbody.innerHTML = ''; // Clear existing rows
 
     data.forEach((row, rowIndex) => {
-        //if (row.length === 0 || row.every(cell => cell.trim() === '')) return; // Skip empty rows
+        if (row.length === 0 || row.every(cell => cell.trim() === '')) return; // Skip empty rows
 
         const tr = document.createElement('tr');
 
-        // Skip the first column, iterate over the rest
-        row.slice(1).forEach((cell, colIndex) => {
+        row.forEach((cell, colIndex) => {
             const td = document.createElement('td');
+            td.textContent = cell;
 
-
-            td.textContent = cell.trim(); 
-            
-
-            // Highlight cells if Method N was right on year X
-            if (colIndex >= 2 && td.textContent === row[2].trim()) {
-                td.classList.remove('highlight2');
+            // Apply conditional formatting for columns 3 to 5
+            if (colIndex >= 2 && cell === row[0]) {
                 td.classList.add('highlight1');
             }
-            else if (colIndex >= 2 && td.textContent.includes(row[2].trim())){
-                td.classList.add('highlight2');
-            }
-            
+
             tr.appendChild(td);
         });
 
         tbody.appendChild(tr);
     });
 }
+
 // Load the CSV and populate the table on page load
 window.onload = loadCSV;
