@@ -16,16 +16,28 @@ function populateTable(data) {
     tbody.innerHTML = ''; // Clear existing rows
 
     data.forEach((row, rowIndex) => {
-        //if (row.length === 0 || row.every(cell => cell.trim() === '')) return; // Skip empty rows
+        if (row.length === 0 || row.every(cell => cell.trim() === '')) return; // Skip empty rows
 
         const tr = document.createElement('tr');
 
-        row.forEach((cell, colIndex) => {
+        // Skip the first column, iterate over the rest
+        row.slice(1).forEach((cell, colIndex) => {
             const td = document.createElement('td');
-            td.textContent = cell;
 
-            // Apply conditional formatting for columns 4 to 7
-            if (colIndex >= 3 && cell === row[2]) {
+            // Handle list or string display
+            try {
+                const parsedCell = JSON.parse(cell.trim());
+                if (Array.isArray(parsedCell)) {
+                    td.textContent = parsedCell.join(', '); // Display list as comma-separated
+                } else {
+                    td.textContent = parsedCell; // Display string/other values
+                }
+            } catch {
+                td.textContent = cell.trim(); // If parsing fails, treat as plain string
+            }
+
+            // Highlight cells if Method N was right on year X
+            if (colIndex >= 3 && row[2].trim() && td.textContent.includes(row[2].trim())) {
                 td.classList.add('highlight');
             }
 
