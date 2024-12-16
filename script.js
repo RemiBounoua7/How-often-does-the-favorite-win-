@@ -25,10 +25,10 @@ function populateTable(data) {
             td.textContent = cell;
 
             // Apply conditional formatting for columns 3 to 5
-            if (colIndex >= 2 && cell === row[2]) {
+            if (colIndex >= 2 && td.textContent === row[2]) {
                 td.classList.add('highlight1');
             }
-            else if (colIndex >= 2 && cell.includes(row[2])){
+            else if (colIndex >= 2 && td.textContent.includes(row[2])){
                 td.classList.add('highlight2');
             }
 
