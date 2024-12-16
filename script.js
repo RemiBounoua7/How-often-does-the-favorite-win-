@@ -24,17 +24,9 @@ function populateTable(data) {
         row.slice(1).forEach((cell, colIndex) => {
             const td = document.createElement('td');
 
-            // Handle list or string display
-            try {
-                const parsedCell = JSON.parse(cell.trim());
-                if (Array.isArray(parsedCell)) {
-                    td.textContent = parsedCell.join(', '); // Display list as comma-separated
-                } else {
-                    td.textContent = parsedCell; // Display string/other values
-                }
-            } catch {
-                td.textContent = cell.trim(); // If parsing fails, treat as plain string
-            }
+            // Handle string display
+            td.textContent = cell.trim(); 
+            
 
             // Highlight cells if Method N was right on year X
             if (colIndex >= 3 && row[2].trim() && td.textContent.includes(row[2].trim())) {
