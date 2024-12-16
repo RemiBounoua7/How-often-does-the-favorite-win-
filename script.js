@@ -5,8 +5,8 @@ const csvFilePath = 'Favorites table.csv';
 async function loadCSV() {
     const response = await fetch(csvFilePath);
     const csvText = await response.text();
-    const rows = csvText.split('\n').map(row => row.split(',')).shift();
-    
+    const rows = csvText.split('\n').map(row => row.split(','));
+    rows.shift();
     populateTable(rows);
 }
 
