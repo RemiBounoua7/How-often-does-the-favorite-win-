@@ -23,12 +23,12 @@ function populateTable(data) {
         row.slice(1).forEach((cell, colIndex) => {
             const td = document.createElement('td');
             td.textContent = cell;
-
+            const originalColIndex = colIndex + 1; // Adjust for slice(1)
             // Apply conditional formatting for columns 3 to 5
-            if (colIndex >= 2 && td.textContent === row[2]) {
+            if (originalColIndex >= 2 && td.textContent === row[2]) {
                 td.classList.add('highlight1');
             }
-            else if (colIndex >= 2 && td.textContent.includes(row[2])){
+            else if (originalColIndex >= 2 && td.textContent.includes(row[2])){
                 td.classList.add('highlight2');
             }
 
