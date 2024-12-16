@@ -30,10 +30,10 @@ function populateTable(data) {
 
             // Highlight cells if Method N was right on year X
             if(colIndex>=2){
-                const champ = row[0];
+                const champ = row[0].trim();
 
-                if (cell === champ) {
-                td.classList.add('highlight1');
+                if (td.textContent === champ) {
+                    td.classList.add('highlight1');
                 }
                 else if (td.textContent.includes(champ)){
                     td.classList.add('highlight2');
