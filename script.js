@@ -16,7 +16,7 @@ function populateTable(data) {
     tbody.innerHTML = ''; // Clear existing rows
 
     data.forEach((row, rowIndex) => {
-        if (row.length === 0 || row.every(cell => cell.trim() === '')) return; // Skip empty rows
+        //if (row.length === 0 || row.every(cell => cell.trim() === '')) return; // Skip empty rows
 
         const tr = document.createElement('tr');
 
@@ -24,31 +24,28 @@ function populateTable(data) {
         row.slice(1).forEach((cell, colIndex) => {
             const td = document.createElement('td');
 
-            // Handle string display
+
             td.textContent = cell.trim(); 
             
 
             // Highlight cells if Method N was right on year X
-            if (colIndex >= 2 && row[2].trim() && cell === row[0]) {
-                td.classList.remove('highlight2');
+            if(colIndex>=2){
+                const champ = row[0];
+
+                if (cell === champ) {
                 td.classList.add('highlight1');
+                }
+                else if (td.textContent.includes(champ)){
+                    td.classList.add('highlight2');
+                }
             }
-            else if (colIndex >= 2 && row[2].trim() && td.textContent.includes(row[2].trim())){
-                td.classList.remove('highlight1');
-                td.classList.add('highlight2');
-            }
-            else{
-                td.classList.remove('highlight1');
-                td.classList.remove('highlight2');
-            }
-
-
+            
+            
             tr.appendChild(td);
         });
 
         tbody.appendChild(tr);
     });
 }
-
 // Load the CSV and populate the table on page load
 window.onload = loadCSV;
