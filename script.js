@@ -25,11 +25,8 @@ function populateTable(data) {
             td.textContent = cell;
             const originalColIndex = colIndex + 1; // Adjust for slice(1)
             // Apply conditional formatting for columns 3 to 5
-            if (originalColIndex >= 3 && td.textContent === row[2]) {
-                td.classList.add('highlight1');
-            }
-            else if (originalColIndex >=3 && td.textContent.includes(row[2])){
-                td.classList.add('highlight2');
+            if (originalColIndex >=3 && td.textContent.includes(row[2])){
+                td.classList.add('highlight');
             }
 
             tr.appendChild(td);
