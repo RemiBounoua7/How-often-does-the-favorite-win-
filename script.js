@@ -32,7 +32,7 @@ function populateTable(data) {
             if (colIndex >= 2 && row[2].trim() && cell === row[0]) {
                 td.classList.add('highlight1');
             }
-            if (colIndex >= 2 && row[2].trim() && td.textContent.includes(row[2].trim())){
+            else if (colIndex >= 2 && row[2].trim() && td.textContent.includes(row[2].trim())){
                 td.classList.add('highlight2');
             }
 
