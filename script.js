@@ -29,17 +29,13 @@ function populateTable(data) {
             
 
             // Highlight cells if Method N was right on year X
-            if(colIndex>=2){
-                const champ = row[0].trim();
-
-                if (td.textContent === champ) {
-                    td.classList.add('highlight1');
-                }
-                else if (td.textContent.includes(champ)){
-                    td.classList.add('highlight2');
-                }
+            if (colIndex >= 2 && td.textContent === row[2].trim()) {
+                td.classList.remove('highlight2');
+                td.classList.add('highlight1');
             }
-            
+            else if (colIndex >= 2 && td.textContent.includes(row[2].trim())){
+                td.classList.add('highlight2');
+            }
             
             tr.appendChild(td);
         });
