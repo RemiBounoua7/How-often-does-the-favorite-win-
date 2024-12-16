@@ -29,10 +29,10 @@ function populateTable(data) {
             
 
             // Highlight cells if Method N was right on year X
-            if (colIndex >= 3 && row[2].trim() && cell === row[0]) {
+            if (colIndex >= 2 && row[2].trim() && cell === row[0]) {
                 td.classList.add('highlight1');
             }
-            if (colIndex >= 3 && row[2].trim() && td.textContent.includes(row[2].trim())){
+            if (colIndex >= 2 && row[2].trim() && td.textContent.includes(row[2].trim())){
                 td.classList.add('highlight2');
             }
 
