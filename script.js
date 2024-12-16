@@ -6,7 +6,7 @@ async function loadCSV() {
     const response = await fetch(csvFilePath);
     const csvText = await response.text();
     const rows = csvText.split('\n').map(row => row.split(','));
-
+    rows.shift();
     populateTable(rows);
 }
 
@@ -20,7 +20,7 @@ function populateTable(data) {
 
         const tr = document.createElement('tr');
 
-        row.forEach((cell, colIndex) => {
+        row.slice(1).forEach((cell, colIndex) => {
             const td = document.createElement('td');
             td.textContent = cell;
 
