@@ -1,31 +1,11 @@
 // Path to the CSV file
 const csvFilePath = 'Favorites table.csv';
 
-
-// Function to preprocess CSV data
-function preprocessCSV(csvText) {
-    // Match rows while preserving lists (e.g., ["A","B"])
-    const regex = /(".*?"|[^",]+)(?=,|$)/g;
-    return csvText.split('\n').map(line => {
-        const matches = [...line.matchAll(regex)].map(match => match[0].trim());
-        return matches.map(cell => {
-            // Remove surrounding quotes if present
-            return cell.startsWith('"') && cell.endsWith('"') ? cell.slice(1, -1) : cell;
-        });
-    });
-}
-
-
 // Function to fetch and parse CSV
 async function loadCSV() {
     const response = await fetch(csvFilePath);
     const csvText = await response.text();
-
-    // Preprocess CSV to handle lists correctly
-    const rows = preprocessCSV(csvText);
-
-    // Remove the first row (header)
-    rows.shift();
+    const rows = csvText.split('\n').map(row => row.split(','));
 
     populateTable(rows);
 }
