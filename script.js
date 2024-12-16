@@ -28,6 +28,9 @@ function populateTable(data) {
             if (colIndex >= 2 && cell === row[2]) {
                 td.classList.add('highlight1');
             }
+            else if (colIndex >= 2 && cell.includes(row[2])){
+                td.classList.add('highlight2');
+            }
 
             tr.appendChild(td);
         });
