@@ -13,9 +13,12 @@
     <section id="Intro">
         <h2>Introduction</h2>
         <p>
-            The NBA is a very competitive industry in which 30 teams give their all out on the court all year, with only one champion.
+            The NBA is a very competitive league in which 30 teams give their all out on the court all year, with only one champion. But every season, some teams seem better than their opponents.
+            Some year, it's not even close, and we feel like we know who's gonna win the ring way before they do. Think 1997, or 2017. 
+            But every other year, it's a toss-up, and the Play Off bounds are high stakes, as anyone could realistically win.
             <br>    <br>   
-            First, we'll identify the favorites through 4 different methods, and then we will see how often did they win and a little more.
+            We'll ask ourselves who are each year's favorites for the title. How often is this label correct ? Aka how many times the team we think will win actually wins. Who gets to decide who are favorites ? 
+            What method is the most accurate to define who's the real favorite ? Is there one ?<br><br>Let's dive right in.
 
         </p>
         </section>
@@ -23,30 +26,30 @@
         <h2>Identifying the favorites through different selection processes </h2>
         
         <p >
-            To determine the favorite for the title, we will proceed through 4 different methods
+            To determine the favorite for the title, we will proceed through 4 different methods :
         </p>
-        <u><h4>Method 1</h4></u>
+        <u><h4>Method 1 :</h4></u>
         <p>
-            Favorite is the N°1 Seed in the league at the end of the regular season. The team with the most wins (or more if tied), and consider them the favorites for the coming playoffs.
+            Favorite is the N°1 Seed in the league at the end of the regular season. We take the team with the most wins (or more if tied), and consider them the favorites for the coming playoffs.
             The idea is simple : the regular season should be the best way of finding the best basketball team. 82 games to prove your worth, you came on top, you should win it all.
         </p>
-        <u><h4>Method 2</h4></u>
+        <u><h4>Method 2 :</h4></u>
         <p>
-            Favorite is the best ranked team, advanced ratings wise. Same reasoning, you had 82 games to prove your worth on offense and defense, and the numbers say you have the best mix.
-            You should fear no one, since you have better ratings than them accross 82 games.
+            Favorite is the best ranked team, advanced ratings wise. If you are not familiar with this concept, take a look at the <a href="https://remibounoua7.github.io/NBA-Championship-Corner/">contenders page</a> to learn more about normalized offensive and defensive ratings. The favorite will be the team closest to the top-right corner.
+            The idea is the same, you had 82 games to prove your worth on offense and defense, and the numbers say you have the best mix. You should fear no one, since you have better ratings than them accross the season, prove it in the playoffs.
         </p>
-        <u><h4>Method 3</h4></u>
+        <u><h4>Method 3 : </h4></u>
         <p>
-            Favorite is whoever Vegas deems favorite at the beginning of the season. If 2 or more teams are tied, both are deemed favorites. Let's see if people that are paid to get it right are more accurate than the actual sport they try to predict.
+            Favorite is whoever Vegas deems favorite at the beginning of the season. If 2 or more teams are tied, both are deemed favorites. Let's see if the people that are paid to get it right are more accurate than the actual sport they try to predict.
             What if the Vegas' pick wins more often than the N°1 seed ? Are bookmakers seeing the future ?
         </p>
-        <u><h4>Method 4</h4></u>
+        <u><h4>Method 4 :</h4></u>
         <p>
             Favorite is whoever Vegas deems favorite at the end of the season, before the 1st playoff game. Bookmakers have had 82 games to readjust their models and predictions, give them another chance
             to get it right, and see if they have better results.
         </p>
         <p><i>The Vegas odds have been taken from <a href="https://sportsoddshistory.com">sportsoddshistory.com</a>. Conclusions based on such data should therefore be taken with a grain of salt, 
-            since accuracy and confidence in the numbers is quite low.</i> </p>
+            since accuracy and confidence in the numbers is quite low. Detailed methodology is explained in the associated pyton notebook located in the github repository.</i> </p>
         
     </section>
     <section id="How often do they win ?">
@@ -58,31 +61,49 @@
             <table id="data-table">
                 <thead>
                     <tr>
-                        <th>Year</th>
-                        <th>Champion</th>
-                        <th>N°1 Seed</th>
-                        <th>Best ranked team</th>
-                        <th>Vegas favorites (bfs)</th>
-                        <th>Vegas favorites (bfpo)</th>
+                        <th style=" text-align: center;">Year</th>
+                        <th style=" text-align: center;">Champion</th>
+                        <th style=" text-align: center;">N°1 Seed</th>
+                        <th style=" text-align: center;">Best ranked team</th>
+                        <th style=" text-align: center;">Vegas favorites (bfs)</th>
+                        <th style=" text-align: center;">Vegas favorites (bfpo)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Data will be loaded dynamically from 'Favorite table.csv' -->
                 </tbody>
+                <tfoot>
+                    <tr>
+                      <th scope="row" style=" text-align: center;">Totals</th>
+                      <td></td>
+                      <td style=" text-align: center;">11 / 32</td>
+                      <td style=" text-align: center;">11 / 28</td>
+                      <td style=" text-align: center;">13 / 31</td>
+                      <td style="background-color: goldenrod; text-align: center;">15 / 30</td>
+                    </tr>
+                  </tfoot>
             </table>
         </div>
+        <p><br>
+            4>3>2>1. It's settled then, Vegas is head and shoulders above the rest. Did it surprise you ? What do you remember from the selected season ? Did you remember how great Phoenix was in 2022 ? How about 2006 Pistons ?
+            It's great to look at that table and rewind back in time to relieve the NBA debates from these years, with the different methods highlighting the different contenders for the title and the way people picked their favorites.
+        </p>
     </section>
     <br>
     <section>
-        <h2>Put some skin in the game</h2>
+        <h2>Let's put some skin in the game</h2>
         <p>
-            What if we bet 100$ on the favorite every year ? How would we feel right now ? What method would've made us rich ? Which one would've made us bankrupt ? Does the casino really always win ?
+            What if we take it a step further, and bet 100$ on the favorite every year ? How would we feel right now ? What method would've made us rich ? Which one would've made us bankrupt ? Does the casino really always win ?
         </p>
         
         <div class="text-image-container">
         <img src="Methods_annotated.png">
         <p>
-            Img des paris sur les méthodes et conclusions
+            Here are all 4 methods and the net result of your bank account after betting 100$ on every favorite following the methods' inputs. We see very clear trends.<br><br>
+            First of all, the casino doesn't, in fact, always win ! Both Vegas methods are net positives. The 3rd most effective method is the ranking based one, and dead last comes the N°1 seed.
+            What's good to know is that betting on the best regular season team is not the smartest move in the world. It's the only losing strategy in the long term, and the slope doesn't make it look like it's going up anytime soon.
+            <br><br>Finally, from 1998 to 2016, betting on the favorites before the playoffs was more rewarding than betting before the season, but after 2017 it got reversed. I'd say it's hard to tell which betting strategy is the best one, but I can tell without a doubt which one is the riskier.
+            <br><br>What can we take from that analysis ? Should we put all our money on the Vegas favorites every year and trust the graph in the long run ? How about betting only when all 4 methods pick the same team ? The data shows when that happens it's never wrong (1997,1998,2017,2024)
         </p><br><br>
         </div>
     </section>
@@ -90,17 +111,17 @@
 
     <section id="2025">
 
-        <h2>What does it say about 2025 then ?</h2>
-        <br>
-        <img >
+        <h2>What does it say about 2025 then ?</h2><br>
+
         <p>
             Favorite before the season : Boston Celtics with a +310.
-            <br>Are you bold enough to follow the best strategy and bet on the Celtics right now ? Will you wait to see who's the best placed team or the n°1 seed ?
-
-            <br><br>Hope you had a good read !
+            <br>Are you bold enough to follow the best strategy and bet on the Celtics right now ? Will you wait to see who's the best placed team or favorites at the end of the season ? 
+            What if the Cavs get the N°1 seed and the potential home court advantage in a series against Boston, breaking the 4 method sweep we talked about, would it cool you off ? 
+            Are the Thunder going to be the best ranked team ? Would you trust them to go all the way though ?
+            <i>Keep in mind, this is not a betting advice, it's all fun and games, and tools to view the NBA through different lenses trying to answer general questions that we ask ourselves.</i>
+            <br><br><center>Hope you had a good read !</center>
         </p>
 </body>
 <script src="script.js"></script>
 </html>
-
 
